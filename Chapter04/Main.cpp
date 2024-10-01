@@ -2,16 +2,29 @@
 using namespace std;
 
 //変数の前に & をつけることでその変数のアドレスを取得できる
-void Foo()
+void Init(int array[])
 {
-	int a;
-	char b[10];
-	cout << "a	:" << (size_t)&a << endl
-		<< "b	:" << (size_t)&b << endl
-		<< "Foo	:" << (size_t)&Foo << endl;
+	for (int i = 0; i < 5; i++)
+	{
+		array[i] = i * 5;
+	}
+	
+}
+
+void Show(int array[])
+{
+	for (int i = 0; i < 5; i++)
+	{
+		cout << array[i] << ' ';
+	}
+	cout << endl;
+
 }
 
 int main()
 {
-	Foo();
+	int n[5];
+
+	Init(n);
+	Show(n);
 }
