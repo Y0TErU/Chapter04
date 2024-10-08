@@ -1,17 +1,24 @@
 #include <iostream>
 using namespace std;
 
-//変数の前に & をつけることでその変数のアドレスを取得できる
-void Foo()
+size_t StrLen(const char* str)
 {
-	int a;
-	char b[10];
-	cout << "a	:" << (size_t)&a << endl
-		<< "b	:" << (size_t)&b << endl
-		<< "Foo	:" << (size_t)&Foo << endl;
+	size_t i;
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		//何もしない
+	}
+	return i;
+}
+
+void Showlength(const char* str)
+{
+	cout << "文字列「 " << str << " 」の長さは "
+		<< StrLen(str) << "バイトです。" << endl;
 }
 
 int main()
 {
-	Foo();
+	Showlength("Hello");
+	Showlength("");
 }
