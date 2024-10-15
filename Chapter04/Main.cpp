@@ -2,27 +2,34 @@
 using namespace std;
 
 const int ARRAY_SIZE = 5;
-void Init(int array[])
+const char* const MONTH_NAME[] =
 {
-	for (int i = 0; i < 5; i++)
-	{
-		array[i] = i * 5;
-	}
-}
+	"–rŒŽ","”@ŒŽ","–í¶","‰KŒŽ","ŽHŒŽ", "…–³ŒŽ","•¶ŒŽ","—tŒŽ", "’·ŒŽ","_–³ŒŽ",
+	"‘šŒŽ", "Žt‘–"
+};
 
-void Show(int array[])
+const char* Get01dMonthName(int month)
 {
-	for (int i = 0; i < ARRAY_SIZE; i++)
+	if (1 <= month && month <= 12)
 	{
-		cout << array[i] << ' ';
+		return MONTH_NAME[month - 1];
 	}
-	cout << endl;
+	return 0;		//NULL
 }
 
 int main()
 {
-	int n[ARRAY_SIZE];
+	int month;
+	cout << "¡‚Í‰½ŒŽ‚Å‚·‚©H > " << flush;
+	cin >> month;
 
-	Init(n);
-	Show(n);
+	const char* name = Get01dMonthName(month);
+	if (name == 0)
+	{
+		cout << month << "ŒŽ‚Í‘¶Ý‚µ‚Ü‚¹‚ñB" << endl;
+	}
+	else
+	{
+		cout << name << endl;
+	}
 }
